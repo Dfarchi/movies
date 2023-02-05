@@ -31,5 +31,9 @@ Get movies and amount of actors who played main roles
 # description__icontains='criminal'))) print(Movie.objects.filter(Q(description__icontains='mob') | Q(
 # description__icontains='cop') | Q(description__icontains='criminal')).filter(release_year__lte= 2010))
 
+# actors = Actor.objects.annotate(num_movies=Count("movie_actor__movie"))
+# print([(actor.name, actor.num_movies) for actor in actors])
+# print(Rating.objects.aggregate(Max('rating'),Min('rating'),Avg('rating')))
 
-print(Movie_Actor.objects.annotate(Count('movie')))
+[[print(m.movie_name,r.rating) for r in Rating.objects.filter(movie = m.id)] for m in Movie.objects.all()]
+# [print(mr.rating, mr.movie) for mr in Movie.objects.all()]

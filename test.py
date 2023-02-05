@@ -1,11 +1,8 @@
-# import os
-# import random
-#
-# import django
-#
-# os.environ['DJANGO_SETTINGS_MODULE'] = 'movies.settings'
-# django.setup()
-#
+import os
+import django
+os.environ['DJANGO_SETTINGS_MODULE'] = 'movies.settings'
+django.setup()
+
 # from movies_app.models import *
 #
 # # Movie(
