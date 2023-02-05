@@ -202,4 +202,4 @@ def movie_actors(request, movie_id):
 
 
 def index(request):
-    return HttpResponse("Movies home page")
+    return render(request, 'static/index_html.html')
